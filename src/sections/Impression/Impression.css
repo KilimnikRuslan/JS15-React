@@ -1,0 +1,19 @@
+.page-Impression {
+   padding: 60px  0 100px;
+   background-color: #e9e3e3;
+}
+
+.page-Impression-title {
+    color: rgb(22, 114, 157);
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.Impression-subtitle {
+    padding: 0 400px;
+    text-align: center;
+    color: #545151;
+    font-size: 18px;
+}
