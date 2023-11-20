@@ -18,7 +18,7 @@ const TodoList = () => {
   
     return (
       <div>
-        <h2>Список завдань</h2>
+        <h2>Список завданнь</h2>
         <input type="text" value={task} onChange={handleInputChange} />
         <button onClick={handleAddTask}>Додати завдання</button>
         <ul>

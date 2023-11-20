@@ -16,7 +16,7 @@ const ButtonComponent = () => {
       </button>
       {isTextVisible && (
         <div className="animated-text">
-          <q>Ти не знаєш, доки не спробуєш</q>
+          <q> Ти не знаєш, доки не спробуєш</q>
         </div>
       )}
     </div>
