@@ -2,17 +2,17 @@ import  { useState } from 'react'
 import './App.css'
 
 const TodoList = () => {
-    const [task, setTask] = useState(''); // Стан для збереження введеного значення
-    const [tasksList, setTasksList] = useState([]); // Стан для збереження списку завдань
+    const [task, setTask] = useState(''); 
+    const [tasksList, setTasksList] = useState([]);
   
     const handleInputChange = (event) => {
-      setTask(event.target.value); // Оновлення значення введеного завдання
+      setTask(event.target.value); 
     };
   
     const handleAddTask = () => {
       if (task.trim() !== '') {
-        setTasksList([...tasksList, task]); // Додавання нового завдання до списку
-        setTask(''); // Очистка поля введення після додавання
+        setTasksList([...tasksList, task]); 
+        setTask(''); 
       }
     };
   
