@@ -13,31 +13,3 @@ button {
 }
 
 
-button:hover {
-  background-color: #0a0a0a;
-  color: #ffffff;
-}
-
-.animated-text {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-}
-
-.animated-text  q {
-  font-size: 24px;
-  font-weight: bold;
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-

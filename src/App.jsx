@@ -1,29 +1,27 @@
-import  { useState } from 'react'
+import  { useState, useEffect } from 'react'
 import './App.css'
 
 
-const ButtonComponent = () => {
-  const [isTextVisible, setIsTextVisible] = useState(false);
+const Timer = () => {
+  const [seconds, setSeconds] = useState(0);
 
-  const handleButtonClick = () => {
-    setIsTextVisible(!isTextVisible);
-  };
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setSeconds(seconds + 1);
+    }, 1000);
+
+    return () => clearTimeout(timerId);
+  }, [seconds]); 
 
   return (
     <div>
-      <button onClick={handleButtonClick}>
-        {isTextVisible ? 'Сховати текст' : 'Показати текст'}
-      </button>
-      {isTextVisible && (
-        <div className="animated-text">
-          <q> Ти не знаєш, доки не спробуєш</q>
-        </div>
-      )}
+      <h2>Таймер</h2>
+      <p>Час: {seconds} секунд</p>
     </div>
   );
 };
 
-export default ButtonComponent;
+export default Timer;
 
 
 
