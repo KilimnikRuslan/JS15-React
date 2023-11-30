@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import  { useState } from 'react';
 
 const Tab = ({ label, onClick, isActive }) => (
   <div
@@ -37,11 +37,11 @@ const Tabs = ({ tabs }) => {
   );
 };
 
-const App = () => {
+const MainComponent = () => {
   const tabs = [
-    { label: 'Tab 1', content: 'Вміст вкладки 1' },
-    { label: 'Tab 2', content: 'Вміст вкладки 2' },
-    { label: 'Tab 3', content: 'Вміст вкладки 3' },
+    { label: 'Вкладка 1', content: 'Зміст вкладки 1' },
+    { label: 'Вкладка 2', content: 'Зміст вкладки 2' },
+    { label: 'Вкладка 3', content: 'Зміст вкладки 3' },
   ];
 
   return (
@@ -52,4 +52,5 @@ const App = () => {
   );
 };
 
-export default App;
+export default MainComponent;
+
