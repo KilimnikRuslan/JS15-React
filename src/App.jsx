@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import  { useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+const Table = () => {
+  const [selectedCell, setSelectedCell] = useState(null);
+
+  const handleCellClick = (row, col) => {
+    const cellNumber = row * 4 + col + 1;
+    setSelectedCell(cellNumber);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <table border="1">
+      <tbody>
+        {[...Array(4)].map((_, rowIndex) => (
+          <tr key={rowIndex}>
+            {[...Array(4)].map((_, colIndex) => (
+              <td key={colIndex} onClick={() => handleCellClick(rowIndex, colIndex)}>
+                {rowIndex * 4 + colIndex + 1}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+      {selectedCell !== null && (
+        <caption>Ви обрали ячейку: {selectedCell}</caption>
+      )}
+    </table>
+  );
+};
 
-export default App
+export default Table;
+
+
+
+
+
