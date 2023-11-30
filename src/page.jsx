@@ -22,7 +22,7 @@ const Tabs = ({ tabs }) => {
 
   return (
     <div>
-      <div style={{ display: 'flex', borderBottom: '1px solid #ccc' }}>
+      <div style={{ display: 'flex', borderBottom: '2px solid #ccc' }}>
         {tabs.map((tab, index) => (
           <Tab
             key={index}
