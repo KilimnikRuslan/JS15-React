@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
-function App() {
-  const [count, setCount] = useState(0)
+const MyForm = () => {
+  const { handleSubmit, register, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <label>Ім'я:</label>
+        <input {...register('firstName', { required: 'Це поле обов\'язкове' })} />
+        {errors.firstName && <p>{errors.firstName.message}</p>}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+      <div>
+        <label>Прізвище:</label>
+        <input {...register('lastName', { required: 'Це поле обов\'язкове' })} />
+        {errors.lastName && <p>{errors.lastName.message}</p>}
+      </div>
+
+      <div>
+        <label>Місто:</label>
+        <input {...register('city', { required: 'Це поле обов\'язкове' })} />
+        {errors.city && <p>{errors.city.message}</p>}
+      </div>
+
+      <button type="submit">Відправити</button>
+    </form>
+  );
+};
+
+export default MyForm;
